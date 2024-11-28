@@ -1,7 +1,7 @@
 module Warmup1Spec (spec) where
 
 import Test.Hspec
-import Warmup1 (sleepIn, diff21, nearHundred)
+import Warmup1 (sleepIn, diff21, nearHundred, missingChar)
 
 spec :: Spec
 spec = describe "Warmup1.sleepIn" $ do
@@ -38,3 +38,15 @@ spec = describe "Warmup1.sleepIn" $ do
       nearHundred 190 `shouldBe` True
     it "returns False for nearHundred(290)" $
       nearHundred 290 `shouldBe` False
+
+  describe "Warmup1.missingChar" $ do
+    it "removes character at index 1 from 'kitten'" $
+      missingChar "kitten" 1 `shouldBe` "ktten"
+    it "removes first character from 'Hi'" $
+      missingChar "Hi" 0 `shouldBe` "i"
+    it "removes last character from 'Hi'" $
+      missingChar "Hi" 1 `shouldBe` "H"
+    it "removes character at index 2 from 'code'" $
+      missingChar "code" 2 `shouldBe` "coe"
+    it "removes last character from 'chocolate'" $
+      missingChar "chocolate" 8 `shouldBe` "chocolat"

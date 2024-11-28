@@ -8,3 +8,8 @@ diff21 n = if n > 21 then (n - 21) * 2 else 21 - n
 
 nearHundred :: Int -> Bool
 nearHundred n = abs (n - 100) <= 10 || abs (n - 200) <= 10
+
+missingChar :: String -> Int -> String
+missingChar str n = fstHalf ++ drop 1 sndHalf
+  where
+    (fstHalf, sndHalf) = splitAt n str
