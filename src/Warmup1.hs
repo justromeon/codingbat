@@ -13,3 +13,6 @@ missingChar :: String -> Int -> String
 missingChar str n = fstHalf ++ drop 1 sndHalf
   where
     (fstHalf, sndHalf) = splitAt n str
+
+monkeyTrouble :: Bool -> Bool -> Bool
+monkeyTrouble = (==)

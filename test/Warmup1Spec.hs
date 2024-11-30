@@ -1,7 +1,7 @@
 module Warmup1Spec (spec) where
 
 import Test.Hspec
-import Warmup1 (sleepIn, diff21, nearHundred, missingChar)
+import Warmup1 (sleepIn, diff21, nearHundred, missingChar, monkeyTrouble)
 
 spec :: Spec
 spec = describe "Warmup1.sleepIn" $ do
@@ -50,3 +50,13 @@ spec = describe "Warmup1.sleepIn" $ do
       missingChar "code" 2 `shouldBe` "coe"
     it "removes last character from 'chocolate'" $
       missingChar "chocolate" 8 `shouldBe` "chocolat"
+  
+  describe "Warmup1.monkeyTrouble" $ do
+    it "returns True when both monkeys are smiling" $
+      monkeyTrouble True True `shouldBe` True
+    it "returns True when neither monkey is smiling" $
+      monkeyTrouble False False `shouldBe` True
+    it "returns False when only first monkey is smiling" $
+      monkeyTrouble True False `shouldBe` False
+    it "returns False when only second monkey is smiling" $
+      monkeyTrouble False True `shouldBe` False
