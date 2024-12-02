@@ -16,3 +16,6 @@ missingChar str n = fstHalf ++ drop 1 sndHalf
 
 monkeyTrouble :: Bool -> Bool -> Bool
 monkeyTrouble = (==)
+
+parrotTrouble :: Bool -> Int -> Bool
+parrotTrouble talking hour = talking && (hour < 7 || hour > 20)

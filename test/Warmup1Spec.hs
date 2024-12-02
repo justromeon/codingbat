@@ -1,7 +1,7 @@
 module Warmup1Spec (spec) where
 
 import Test.Hspec
-import Warmup1 (sleepIn, diff21, nearHundred, missingChar, monkeyTrouble)
+import Warmup1 (sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble)
 
 spec :: Spec
 spec = describe "Warmup1.sleepIn" $ do
@@ -60,3 +60,15 @@ spec = describe "Warmup1.sleepIn" $ do
       monkeyTrouble True False `shouldBe` False
     it "returns False when only second monkey is smiling" $
       monkeyTrouble False True `shouldBe` False
+  
+  describe "Warmup1.parrotTrouble" $ do
+    it "returns True when talking before 7" $
+      parrotTrouble True 6 `shouldBe` True
+    it "returns False when not talking before 7" $
+      parrotTrouble False 6 `shouldBe` False
+    it "returns True when talking after 20" $
+      parrotTrouble True 21 `shouldBe` True
+    it "returns False when not talking after 20" $
+      parrotTrouble False 21 `shouldBe` False
+    it "returns False when talking during normal hours" $
+      parrotTrouble True 20 `shouldBe` False
