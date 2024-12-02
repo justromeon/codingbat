@@ -16,27 +16,27 @@ spec = describe "Warmup1.sleepIn" $ do
     sleepIn True True `shouldBe` True
 
   describe "Warmup1.diff21" $ do
-    it "returns 0 for diff21(21)" $
+    it "returns absolute difference when number equals 21" $
       diff21 21 `shouldBe` 0
-    it "returns 2 for diff21(19)" $
+    it "returns absolute difference when number is less than 21" $
       diff21 19 `shouldBe` 2
-    it "returns 2 for diff21(22)" $
+    it "returns double the absolute difference when number is over 21" $
       diff21 22 `shouldBe` 2
-    it "returns 18 for diff21(30)" $
+    it "returns double the absolute difference for larger numbers over 21" $
       diff21 30 `shouldBe` 18
-    it "returns 21 for diff21(-1)" $
+    it "returns absolute difference for negative numbers" $
       diff21 (-1) `shouldBe` 22
 
   describe "Warmup1.nearHundred" $ do
-    it "returns True for nearHundred(93)" $
+    it "returns True when number is within 10 of 100" $
       nearHundred 93 `shouldBe` True
-    it "returns False for nearHundred(89)" $
+    it "returns False when number is not within 10 of 100" $
       nearHundred 89 `shouldBe` False
-    it "returns False for nearHundred(111)" $
+    it "returns False when number is just beyond range of 100" $
       nearHundred 111 `shouldBe` False
-    it "returns True for nearHundred(190)" $
+    it "returns True when number is within 10 of 200" $
       nearHundred 190 `shouldBe` True
-    it "returns False for nearHundred(290)" $
+    it "returns False when number is not within 10 of 100 or 200" $
       nearHundred 290 `shouldBe` False
 
   describe "Warmup1.missingChar" $ do
