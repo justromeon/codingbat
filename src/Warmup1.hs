@@ -19,3 +19,7 @@ monkeyTrouble = (==)
 
 parrotTrouble :: Bool -> Int -> Bool
 parrotTrouble talking hour = talking && (hour < 7 || hour > 20)
+
+posNeg :: Int -> Int -> Bool -> Bool
+posNeg x y True = x<0 && y<0
+posNeg x y False = (x<0 && y>0) || (x>0 && y<0)

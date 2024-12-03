@@ -1,7 +1,9 @@
 module Warmup1Spec (spec) where
 
 import Test.Hspec
-import Warmup1 (sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble)
+import Warmup1 ( sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble
+               , posNeg
+               )
 
 spec :: Spec
 spec = describe "Warmup1.sleepIn" $ do
@@ -72,3 +74,15 @@ spec = describe "Warmup1.sleepIn" $ do
       parrotTrouble False 21 `shouldBe` False
     it "returns False when talking during normal hours" $
       parrotTrouble True 20 `shouldBe` False
+
+  describe "Warmup1.posNeg" $ do
+    it "returns True when one number positive, one negative, and flag is False" $
+      posNeg 1 (-1) False `shouldBe` True
+    it "returns True when both numbers negative and flag is True" $
+      posNeg (-4) (-5) True `shouldBe` True
+    it "returns False when both numbers negative and flag is False" $
+      posNeg (-4) (-5) False `shouldBe` False
+    it "returns True when one negative, one positive regardless of order" $
+      posNeg (-4) 5 False `shouldBe` True
+    it "returns False when flag is True but only one number is negative" $
+      posNeg (-4) 5 True `shouldBe` False
