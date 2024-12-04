@@ -2,7 +2,7 @@ module Warmup1Spec (spec) where
 
 import Test.Hspec
 import Warmup1 ( sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble
-               , posNeg
+               , posNeg, frontBack
                )
 
 spec :: Spec
@@ -86,3 +86,15 @@ spec = describe "Warmup1.sleepIn" $ do
       posNeg (-4) 5 False `shouldBe` True
     it "returns False when flag is True but only one number is negative" $
       posNeg (-4) 5 True `shouldBe` False
+
+  describe "Warmup1.frontBack" $ do
+    it "swaps first and last char of multi-char string" $
+      frontBack "code" `shouldBe` "eodc"
+    it "handles single character string" $
+      frontBack "a" `shouldBe` "a"
+    it "handles two character string" $
+      frontBack "ab" `shouldBe` "ba"
+    it "handles empty string" $
+      frontBack "" `shouldBe` ""
+    it "handles longer string with uppercase" $
+      frontBack "Chocolate" `shouldBe` "ehocolatC"
