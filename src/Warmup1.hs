@@ -28,3 +28,6 @@ frontBack :: String -> String
 frontBack ""     = ""
 frontBack [c]    = [c]
 frontBack (c:cs) = last cs : init cs ++ [c]
+
+sumDouble :: Int -> Int -> Int
+sumDouble x y = if x == y then (x + y) * 2 else x + y

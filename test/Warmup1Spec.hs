@@ -2,7 +2,7 @@ module Warmup1Spec (spec) where
 
 import Test.Hspec
 import Warmup1 ( sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble
-               , posNeg, frontBack
+               , posNeg, frontBack, sumDouble
                )
 
 spec :: Spec
@@ -98,3 +98,15 @@ spec = describe "Warmup1.sleepIn" $ do
       frontBack "" `shouldBe` ""
     it "handles longer string with uppercase" $
       frontBack "Chocolate" `shouldBe` "ehocolatC"
+  
+  describe "Warmup1.sumDouble" $ do
+    it "returns sum when inputs are different" $
+      sumDouble 1 2 `shouldBe` 3
+    it "returns double sum when inputs are same" $
+      sumDouble 2 2 `shouldBe` 8
+    it "handles negative numbers" $
+      sumDouble (-1) 0 `shouldBe` (-1)
+    it "handles zero inputs" $
+      sumDouble 0 0 `shouldBe` 0
+    it "handles larger numbers" $
+      sumDouble 3 3 `shouldBe` 12
