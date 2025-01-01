@@ -2,7 +2,7 @@ module Warmup1Spec (spec) where
 
 import Test.Hspec
 import Warmup1 ( sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble
-               , posNeg, frontBack, sumDouble
+               , posNeg, frontBack, sumDouble, makes10
                )
 
 spec :: Spec
@@ -111,7 +111,7 @@ spec = describe "Warmup1.sleepIn" $ do
     it "handles larger numbers" $
       sumDouble 3 3 `shouldBe` 12
     
-    describe "Warmup1.makes10" $ do
+  describe "Warmup1.makes10" $ do
     it "returns True when one number is 10" $
       makes10 10 1 `shouldBe` True
     it "returns True when sum is 10" $
