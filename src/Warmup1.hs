@@ -31,3 +31,6 @@ frontBack (c:cs) = last cs : init cs ++ [c]
 
 sumDouble :: Int -> Int -> Int
 sumDouble x y = if x == y then (x + y) * 2 else x + y
+
+make10 :: Int -> Int -> Bool
+make10 x y = x == 10 || y == 10 || x+y == 10

@@ -110,3 +110,15 @@ spec = describe "Warmup1.sleepIn" $ do
       sumDouble 0 0 `shouldBe` 0
     it "handles larger numbers" $
       sumDouble 3 3 `shouldBe` 12
+    
+    describe "Warmup1.makes10" $ do
+    it "returns True when one number is 10" $
+      makes10 10 1 `shouldBe` True
+    it "returns True when sum is 10" $
+      makes10 8 2 `shouldBe` True
+    it "returns False when neither condition met" $
+      makes10 8 3 `shouldBe` False
+    it "returns True when both numbers are 10" $
+      makes10 10 10 `shouldBe` True
+    it "returns True with negative numbers summing to 10" $
+      makes10 12 (-2) `shouldBe` True
