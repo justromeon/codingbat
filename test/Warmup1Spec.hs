@@ -2,7 +2,7 @@ module Warmup1Spec (spec) where
 
 import Test.Hspec
 import Warmup1 ( sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble
-               , posNeg, frontBack, sumDouble, makes10
+               , posNeg, frontBack, sumDouble, makes10, notString
                )
 
 spec :: Spec
@@ -122,3 +122,19 @@ spec = describe "Warmup1.sleepIn" $ do
       makes10 10 10 `shouldBe` True
     it "returns True with negative numbers summing to 10" $
       makes10 12 (-2) `shouldBe` True
+  
+  describe "Warmup1.notString" $ do
+    it "returns 'not candy' when input is 'candy'" $
+      notString "candy" `shouldBe` "not candy"
+    it "returns 'not x' when input is 'x'" $
+      notString "x" `shouldBe` "not x"
+    it "returns 'not bad' when input is 'not bad'" $
+      notString "not bad" `shouldBe` "not bad"
+    it "returns 'not bad' when input is 'bad'" $
+      notString "bad" `shouldBe` "not bad"
+    it "returns 'not' when input is 'not'" $
+      notString "not" `shouldBe` "not"
+    it "returns 'not is not' when input is 'is not'" $
+      notString "is not" `shouldBe` "not is not"
+    it "returns 'not no' when input is 'no'" $
+      notString "no" `shouldBe` "not no"

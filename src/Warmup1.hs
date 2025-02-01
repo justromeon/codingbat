@@ -34,3 +34,7 @@ sumDouble x y = if x == y then (x + y) * 2 else x + y
 
 makes10 :: Int -> Int -> Bool
 makes10 x y = x == 10 || y == 10 || x+y == 10
+
+notString :: String -> String
+notString str@('n':'o':'t':_) = str
+notString str = "not " ++ str
