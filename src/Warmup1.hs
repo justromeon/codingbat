@@ -38,3 +38,6 @@ makes10 x y = x == 10 || y == 10 || x+y == 10
 notString :: String -> String
 notString str@('n':'o':'t':_) = str
 notString str = "not " ++ str
+
+front3 :: String -> String
+front3 = concat . replicate 3 . take 3

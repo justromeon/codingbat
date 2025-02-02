@@ -2,7 +2,7 @@ module Warmup1Spec (spec) where
 
 import Test.Hspec
 import Warmup1 ( sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble
-               , posNeg, frontBack, sumDouble, makes10, notString
+               , posNeg, frontBack, sumDouble, makes10, notString, front3
                )
 
 spec :: Spec
@@ -138,3 +138,19 @@ spec = describe "Warmup1.sleepIn" $ do
       notString "is not" `shouldBe` "not is not"
     it "returns 'not no' when input is 'no'" $
       notString "no" `shouldBe` "not no"
+
+  describe "Warmup1.front3" $ do
+    it "repeats first three chars of 'Java'" $
+      front3 "Java" `shouldBe` "JavJavJav"
+    it "repeats first three chars of 'Chocolate'" $
+      front3 "Chocolate" `shouldBe` "ChoChoCho"
+    it "repeats all chars when string length is 3" $
+      front3 "abc" `shouldBe` "abcabcabc"
+    it "takes only first three chars of longer string" $
+      front3 "abcXYZ" `shouldBe` "abcabcabc"
+    it "repeats all chars when string length is 2" $
+      front3 "ab" `shouldBe` "ababab"
+    it "repeats single char three times" $
+      front3 "a" `shouldBe` "aaa"
+    it "handles empty string" $
+      front3 "" `shouldBe` ""
