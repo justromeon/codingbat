@@ -17,7 +17,9 @@ common warnings
 
 library
     import:           warnings
-    exposed-modules:  Warmup1
+    exposed-modules:
+        Warmup1
+        Warmup2
     -- other-modules:
     -- other-extensions:
     build-depends:    base ^>=4.17.2.1
