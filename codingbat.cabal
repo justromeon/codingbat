@@ -43,6 +43,7 @@ test-suite codingbat-test
     default-language: Haskell2010
     other-modules:
         Warmup1Spec
+        Warmup2Spec
     -- other-extensions:
     type:             exitcode-stdio-1.0
     hs-source-dirs:   test
