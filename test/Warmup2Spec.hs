@@ -1,7 +1,7 @@
 module Warmup2Spec (spec) where
 
 import Test.Hspec
-import Warmup2 (stringTimes)
+import Warmup2 (stringTimes, stringSplosion)
 
 spec :: Spec
 spec = describe "Warmup2.stringTimes" $ do
@@ -25,3 +25,15 @@ spec = describe "Warmup2.stringTimes" $ do
     stringTimes "code" 2 `shouldBe` "codecode"
   it "repeats 'code' three times" $
     stringTimes "code" 3 `shouldBe` "codecodecode"
+  
+  describe "Warmup2.stringSplosion" $ do
+    it "correctly builds incremental strings for 'Code'" $
+      stringSplosion "Code" `shouldBe` "CCoCodCode"
+    it "generates progressive substrings for 'abc'" $
+      stringSplosion "abc" `shouldBe` "aababc"
+    it "handles short strings like 'fade'" $
+      stringSplosion "fade" `shouldBe` "ffafadfade"
+    it "builds incremental strings for longer words like 'Kitten'" $
+      stringSplosion "Kitten" `shouldBe` "KKiKitKittKitteKitten"
+    it "works with strings of different lengths like 'Good'" $
+      stringSplosion "Good" `shouldBe` "GGoGooGood"
