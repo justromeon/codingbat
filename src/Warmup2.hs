@@ -8,3 +8,6 @@ stringSplosion = concat . aux
   where
     aux ""     = []
     aux (c:cs) = [c] : map (c:) (aux cs)
+
+arrayFront9 :: [Int] -> Bool
+arrayFront9 = elem 9 . take 4

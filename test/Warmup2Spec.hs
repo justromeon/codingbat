@@ -1,7 +1,7 @@
 module Warmup2Spec (spec) where
 
 import Test.Hspec
-import Warmup2 (stringTimes, stringSplosion)
+import Warmup2 (stringTimes, stringSplosion, arrayFront9)
 
 spec :: Spec
 spec = describe "Warmup2.stringTimes" $ do
@@ -37,3 +37,15 @@ spec = describe "Warmup2.stringTimes" $ do
       stringSplosion "Kitten" `shouldBe` "KKiKitKittKitteKitten"
     it "works with strings of different lengths like 'Good'" $
       stringSplosion "Good" `shouldBe` "GGoGooGood"
+  
+  describe "Warmup2.arrayFront9" $ do
+    it "returns True when 9 is in first 4 elements of [1, 2, 9, 3, 4]" $
+      arrayFront9 [1, 2, 9, 3, 4] `shouldBe` True
+    it "returns False when 9 is after first 4 elements" $
+      arrayFront9 [1, 2, 3, 4, 9] `shouldBe` False
+    it "checks first 4 elements for 9 in a longer array" $
+      arrayFront9 [3, 9, 2, 3, 3] `shouldBe` True
+    it "returns True when 9 is in first 4 elements" $
+      arrayFront9 [9, 2, 3] `shouldBe` True
+    it "handles arrays with multiple 9s in first 4 elements" $
+      arrayFront9 [1, 9, 9] `shouldBe` True
