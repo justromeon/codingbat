@@ -11,3 +11,6 @@ stringSplosion = concat . aux
 
 arrayFront9 :: [Int] -> Bool
 arrayFront9 = elem 9 . take 4
+
+frontTimes :: String -> Int -> String
+frontTimes str = concat . flip replicate (take 3 str)
