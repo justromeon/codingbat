@@ -1,7 +1,7 @@
 module Warmup2Spec (spec) where
 
 import Test.Hspec
-import Warmup2 (stringTimes, stringSplosion, arrayFront9)
+import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes)
 
 spec :: Spec
 spec = describe "Warmup2.stringTimes" $ do
@@ -49,3 +49,15 @@ spec = describe "Warmup2.stringTimes" $ do
       arrayFront9 [9, 2, 3] `shouldBe` True
     it "handles arrays with multiple 9s in first 4 elements" $
       arrayFront9 [1, 9, 9] `shouldBe` True
+  
+  describe "Warmup2.frontTimes" $ do
+    it "repeats first 3 chars of 'Chocolate' twice" $
+      frontTimes "Chocolate" 2 `shouldBe` "ChoCho"
+    it "repeats entire string when length is 3 or less" $
+      frontTimes "Abc" 3 `shouldBe` "AbcAbcAbc"
+    it "handles short strings correctly" $
+      frontTimes "Ab" 4 `shouldBe` "AbAbAbAb"
+    it "repeats single character string" $
+      frontTimes "A" 4 `shouldBe` "AAAA"
+    it "handles zero repetitions" $
+      frontTimes "Abc" 0 `shouldBe` ""
