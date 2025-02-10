@@ -1,7 +1,7 @@
 module Warmup2Spec (spec) where
 
 import Test.Hspec
-import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes)
+import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes, last2)
 
 spec :: Spec
 spec = describe "Warmup2.stringTimes" $ do
@@ -61,3 +61,15 @@ spec = describe "Warmup2.stringTimes" $ do
       frontTimes "A" 4 `shouldBe` "AAAA"
     it "handles zero repetitions" $
       frontTimes "Abc" 0 `shouldBe` ""
+  
+  describe "Warmup2.last2" $ do
+    it "counts occurrences of last two-character substring in 'hixxhi'" $
+      last2 "hixxhi" `shouldBe` 1
+    it "counts occurrences of last two-character substring in 'xaxxaxaxx'" $
+      last2 "xaxxaxaxx" `shouldBe` 1
+    it "counts occurrences of last two-character substring in 'xxaxxaxxaxx'" $
+      last2 "xxaxxaxxaxx" `shouldBe` 3
+    it "returns zero for strings shorter than three characters" $
+      last2 "hi" `shouldBe` 0
+    it "counts occurrences of last two-character substring in numeric string" $
+      last2 "13121312" `shouldBe` 1

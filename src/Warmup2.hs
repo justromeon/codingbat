@@ -14,3 +14,8 @@ arrayFront9 = elem 9 . take 4
 
 frontTimes :: String -> Int -> String
 frontTimes str = concat . flip replicate (take 3 str)
+
+last2 :: String -> Int
+last2 str = length $ filter (\(l2,l1) -> [l2,l1] == final2) $ zip rest (tail rest)
+  where
+    (rest, final2) = splitAt (length str - 2) str
