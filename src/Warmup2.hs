@@ -19,3 +19,6 @@ last2 :: String -> Int
 last2 str = length $ filter (\(l2,l1) -> [l2,l1] == final2) $ zip rest (tail rest)
   where
     (rest, final2) = splitAt (length str - 2) str
+
+array123 :: [Int] -> Bool
+array123 = elem (1,2,3) . (zip3 <$> id <*> drop 1 <*> drop 2)

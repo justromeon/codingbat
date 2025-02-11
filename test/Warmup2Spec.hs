@@ -1,7 +1,7 @@
 module Warmup2Spec (spec) where
 
 import Test.Hspec
-import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes, last2)
+import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes, last2, array123)
 
 spec :: Spec
 spec = describe "Warmup2.stringTimes" $ do
@@ -73,3 +73,15 @@ spec = describe "Warmup2.stringTimes" $ do
       last2 "hi" `shouldBe` 0
     it "counts occurrences of last two-character substring in numeric string" $
       last2 "13121312" `shouldBe` 1
+
+  describe "Warmup2.array123" $ do
+    it "detects sequence 1,2,3 in middle of larger array" $
+      array123 [1, 1, 2, 3, 1] `shouldBe` True
+    it "returns True when array starts with sequence 1,2,3" $
+      array123 [1, 2, 3, 1, 2, 3] `shouldBe` True
+    it "returns True for array containing exactly sequence 1,2,3" $
+      array123 [1, 2, 3] `shouldBe` True
+    it "returns False when array lacks complete 1,2,3 sequence" $
+      array123 [1, 1, 2, 4, 1] `shouldBe` False
+    it "returns False for empty or too short arrays" $
+      array123 [] `shouldBe` False
