@@ -27,3 +27,6 @@ stringBits :: String -> String
 stringBits []  = []
 stringBits [x] = [x]
 stringBits (x:_:zs) = x : stringBits zs
+
+arrayCount9 :: [Int] -> Int
+arrayCount9 = length . filter (== 9)

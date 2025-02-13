@@ -1,7 +1,7 @@
 module Warmup2Spec (spec) where
 
 import Test.Hspec
-import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes, last2, array123, stringBits)
+import Warmup2
 
 spec :: Spec
 spec = describe "Warmup2.stringTimes" $ do
@@ -99,3 +99,15 @@ spec = describe "Warmup2.stringTimes" $ do
       stringBits "" `shouldBe` ""
     it "returns first character only for two-character input" $
       stringBits "Hi" `shouldBe` "H"
+
+  describe "Warmup2.arrayCount9" $ do
+    it "counts single occurrence of 9 in array" $
+      arrayCount9 [1, 2, 9] `shouldBe` 1
+    it "counts multiple occurrences of 9 in array" $
+      arrayCount9 [1, 9, 9, 3, 9] `shouldBe` 3
+    it "returns zero when 9 is not present" $
+      arrayCount9 [1, 2, 3] `shouldBe` 0 
+    it "handles empty array correctly" $
+      arrayCount9 [] `shouldBe` 0
+    it "detects 9 at start of array" $
+      arrayCount9 [9, 2, 4, 3, 1] `shouldBe` 1
