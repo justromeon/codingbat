@@ -1,7 +1,7 @@
 module Warmup2Spec (spec) where
 
 import Test.Hspec
-import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes, last2, array123)
+import Warmup2 (stringTimes, stringSplosion, arrayFront9, frontTimes, last2, array123, stringBits)
 
 spec :: Spec
 spec = describe "Warmup2.stringTimes" $ do
@@ -85,3 +85,17 @@ spec = describe "Warmup2.stringTimes" $ do
       array123 [1, 1, 2, 4, 1] `shouldBe` False
     it "returns False for empty or too short arrays" $
       array123 [] `shouldBe` False
+
+  describe "Warmup2.stringBits" $ do
+    it "returns every other character from 'Hello'" $
+      stringBits "Hello" `shouldBe` "Hlo"
+    it "returns alternate characters from a longer word 'Greetings'" $
+      stringBits "Greetings" `shouldBe` "Getns"
+    it "handles string with spaces correctly" $
+      stringBits "Hello Kitten" `shouldBe` "HloKte"
+    it "returns hidden word from pattern 'hxaxpxpxy'" $
+      stringBits "hxaxpxpxy" `shouldBe` "happy"
+    it "returns empty string for empty input" $
+      stringBits "" `shouldBe` ""
+    it "returns first character only for two-character input" $
+      stringBits "Hi" `shouldBe` "H"

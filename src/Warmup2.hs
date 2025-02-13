@@ -22,3 +22,8 @@ last2 str = length $ filter (\(l2,l1) -> [l2,l1] == final2) $ zip rest (tail res
 
 array123 :: [Int] -> Bool
 array123 = elem (1,2,3) . (zip3 <$> id <*> drop 1 <*> drop 2)
+
+stringBits :: String -> String
+stringBits []  = []
+stringBits [x] = [x]
+stringBits (x:_:zs) = x : stringBits zs
