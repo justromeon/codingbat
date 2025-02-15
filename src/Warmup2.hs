@@ -1,4 +1,7 @@
 module Warmup2 where
+  
+import           Data.Function (on)
+import qualified Data.Set as S
 
 stringTimes :: String -> Int -> String
 stringTimes str n = concat (replicate n str)
@@ -30,3 +33,8 @@ stringBits (x:_:zs) = x : stringBits zs
 
 arrayCount9 :: [Int] -> Int
 arrayCount9 = length . filter (== 9)
+
+stringMatch :: String -> String -> Int
+stringMatch = (S.size .) . (S.intersection `on` S.fromList . pairs)
+  where
+    pairs = zip <*> tail

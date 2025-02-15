@@ -111,3 +111,15 @@ spec = describe "Warmup2.stringTimes" $ do
       arrayCount9 [] `shouldBe` 0
     it "detects 9 at start of array" $
       arrayCount9 [9, 2, 4, 3, 1] `shouldBe` 1
+
+  describe "Warmup2.stringMatch" $ do
+   it "counts overlapping two-character matches in equal length strings" $
+     stringMatch "xxcaazz" "xxbaaz" `shouldBe` 3
+   it "counts matches in shorter string when lengths differ" $
+     stringMatch "hello" "he" `shouldBe` 1
+   it "handles strings with no matching two-character sequences" $
+     stringMatch "abc" "axc" `shouldBe` 0
+   it "returns zero for strings shorter than two characters" $
+     stringMatch "h" "hello" `shouldBe` 0
+   it "handles asymmetric matches between different length strings" $
+     stringMatch "aaxxaaxx" "iaxxai" `shouldBe` 3

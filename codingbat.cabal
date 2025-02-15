@@ -22,7 +22,9 @@ library
         Warmup2
     -- other-modules:
     -- other-extensions:
-    build-depends:    base ^>=4.17.2.1
+    build-depends:
+        base ^>=4.17.2.1,
+        containers
     hs-source-dirs:   src
     default-language: Haskell2010
 
