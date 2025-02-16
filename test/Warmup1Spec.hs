@@ -1,9 +1,7 @@
 module Warmup1Spec (spec) where
 
 import Test.Hspec
-import Warmup1 ( sleepIn, diff21, nearHundred, missingChar, monkeyTrouble, parrotTrouble
-               , posNeg, frontBack, sumDouble, makes10, notString, front3
-               )
+import Warmup1
 
 spec :: Spec
 spec = describe "Warmup1.sleepIn" $ do
