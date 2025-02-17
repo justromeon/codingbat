@@ -10,6 +10,7 @@ library
     exposed-modules:
         Warmup1
         Warmup2
+        String1
     build-depends:
         base ^>=4.17.2.1,
         containers
@@ -22,6 +23,7 @@ test-suite codingbat-test
     other-modules:
         Warmup1Spec
         Warmup2Spec
+        String1Spec
     build-depends:
         base ^>=4.17.2.1,
         codingbat,
