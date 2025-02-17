@@ -1,6 +1,6 @@
 # CodingBat Solutions
 
-This repository contains solutions to CodingBat Python challenges, implemented in Haskell.
+This repository contains solutions to [CodingBat Python challenges](https://codingbat.com/python), implemented in Haskell.
 
 ## Directory Structure
 
