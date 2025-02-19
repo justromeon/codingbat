@@ -28,3 +28,15 @@ spec = do
       makeOutWord "HHoo" "Hello" `shouldBe` "HHHellooo"
     it "works with asymmetric delimiters" $
       makeOutWord "abyz" "YAY" `shouldBe` "abYAYyz"
+
+  describe "String1.firstHalf" $ do
+   it "returns first half of even-length word 'WooHoo'" $
+     firstHalf "WooHoo" `shouldBe` "Woo"
+   it "splits 'HelloThere' into first half correctly" $
+     firstHalf "HelloThere" `shouldBe` "Hello"
+   it "handles single character when string length is two" $
+     firstHalf "ab" `shouldBe` "a"
+   it "handles empty string correctly" $
+     firstHalf "" `shouldBe` ""
+   it "returns first half of numeric string correctly" $
+     firstHalf "0123456789" `shouldBe` "01234"
