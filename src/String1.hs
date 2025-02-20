@@ -9,4 +9,4 @@ makeOutWord out word = left ++ word ++ right
     (left,right) = splitAt (length out - 2) out
 
 firstHalf :: String -> String
-firstHalf = take =<< (flip div 2 . length)
+firstHalf = take =<< (`div` 2) . length
