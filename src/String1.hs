@@ -14,3 +14,6 @@ firstHalf = take =<< (`div` 2) . length
 
 nonStart :: String -> String -> String
 nonStart = (++) `on` drop 1
+
+makeAbba :: String -> String -> String
+makeAbba xs ys = concat [xs,ys,ys,xs]

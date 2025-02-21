@@ -52,3 +52,15 @@ spec = do
       nonStart "a" "x" `shouldBe` ""
     it "combines similar-ending words correctly" $
       nonStart "mart" "dart" `shouldBe` "artart"
+
+  describe "String1.makeAbba" $ do
+    it "creates palindrome pattern with 'Hi' and 'Bye'" $
+      makeAbba "Hi" "Bye" `shouldBe` "HiByeByeHi"
+    it "forms ABBA pattern with longer second string" $
+      makeAbba "Yo" "Alice" `shouldBe` "YoAliceAliceYo"
+    it "handles case with empty second string" $
+      makeAbba "x" "" `shouldBe` "xx"
+    it "handles case with empty first string" $
+      makeAbba "" "y" `shouldBe` "yy"
+    it "creates pattern with identical strings" $
+      makeAbba "Ya" "Ya" `shouldBe` "YaYaYaYa"
