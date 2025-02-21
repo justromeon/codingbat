@@ -1,4 +1,5 @@
 module String1 where
+import Data.Function (on)
 
 helloName :: String -> String
 helloName name = "Hello " ++ name ++ "!" 
@@ -10,3 +11,6 @@ makeOutWord out word = left ++ word ++ right
 
 firstHalf :: String -> String
 firstHalf = take =<< (`div` 2) . length
+
+nonStart :: String -> String -> String
+nonStart = (++) `on` drop 1

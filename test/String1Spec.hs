@@ -30,13 +30,25 @@ spec = do
       makeOutWord "abyz" "YAY" `shouldBe` "abYAYyz"
 
   describe "String1.firstHalf" $ do
-   it "returns first half of even-length word 'WooHoo'" $
-     firstHalf "WooHoo" `shouldBe` "Woo"
-   it "splits 'HelloThere' into first half correctly" $
-     firstHalf "HelloThere" `shouldBe` "Hello"
-   it "handles single character when string length is two" $
-     firstHalf "ab" `shouldBe` "a"
-   it "handles empty string correctly" $
-     firstHalf "" `shouldBe` ""
-   it "returns first half of numeric string correctly" $
-     firstHalf "0123456789" `shouldBe` "01234"
+    it "returns first half of even-length word 'WooHoo'" $
+      firstHalf "WooHoo" `shouldBe` "Woo"
+    it "splits 'HelloThere' into first half correctly" $
+      firstHalf "HelloThere" `shouldBe` "Hello"
+    it "handles single character when string length is two" $
+      firstHalf "ab" `shouldBe` "a"
+    it "handles empty string correctly" $
+      firstHalf "" `shouldBe` ""
+    it "returns first half of numeric string correctly" $
+      firstHalf "0123456789" `shouldBe` "01234"
+
+  describe "String1.nonStart" $ do
+    it "combines words 'Hello' and 'There' after removing first letters" $
+      nonStart "Hello" "There" `shouldBe` "ellohere"
+    it "combines 'java' and 'code' without their first letters" $
+      nonStart "java" "code" `shouldBe` "avaode"
+    it "handles case when second string has only one character" $
+      nonStart "ab" "x" `shouldBe` "b"
+    it "returns empty string when both inputs are single characters" $
+      nonStart "a" "x" `shouldBe` ""
+    it "combines similar-ending words correctly" $
+      nonStart "mart" "dart" `shouldBe` "artart"
