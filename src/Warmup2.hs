@@ -32,6 +32,6 @@ arrayCount9 :: [Int] -> Int
 arrayCount9 = length . filter (== 9)
 
 stringMatch :: String -> String -> Int
-stringMatch = (S.size .) . (S.intersection `on` S.fromList . pairs)
+stringMatch = (S.size .) . (S.intersection `on` S.fromList . bigrams)
   where
-    pairs = zip <*> tail
+    bigrams = zip <*> tail
