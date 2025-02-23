@@ -9,7 +9,7 @@ diff21 n = if n > 21 then (n - 21) * 2 else 21 - n
 nearHundred :: Int -> Bool
 nearHundred n = abs (n - 100) <= 10 || abs (n - 200) <= 10
 
-missingChar :: String -> Int -> String
+missingChar :: [a] -> Int -> [a]
 missingChar str n = fstHalf ++ drop 1 sndHalf
   where
     (fstHalf, sndHalf) = splitAt n str
@@ -24,8 +24,8 @@ posNeg :: Int -> Int -> Bool -> Bool
 posNeg x y True = x<0 && y<0
 posNeg x y False = (x<0 && y>0) || (x>0 && y<0)
 
-frontBack :: String -> String
-frontBack ""     = ""
+frontBack :: [a] -> [a]
+frontBack []     = []
 frontBack [c]    = [c]
 frontBack (c:cs) = last cs : init cs ++ [c]
 
@@ -39,5 +39,5 @@ notString :: String -> String
 notString str@('n':'o':'t':_) = str
 notString str = "not " ++ str
 
-front3 :: String -> String
+front3 :: [a] -> [a]
 front3 = concat . replicate 3 . take 3
