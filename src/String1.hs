@@ -7,7 +7,7 @@ helloName name = "Hello " ++ name ++ "!"
 makeOutWord :: [a] -> [a] -> [a]
 makeOutWord out word = left ++ word ++ right
   where
-    (left,right) = splitAt (length out - 2) out
+    (left,right) = splitAt (length out `div` 2) out
 
 firstHalf :: [a] -> [a]
 firstHalf = take =<< (`div` 2) . length
