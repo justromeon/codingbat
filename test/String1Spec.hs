@@ -64,3 +64,15 @@ spec = do
       makeAbba "" "y" `shouldBe` "yy"
     it "creates pattern with identical strings" $
       makeAbba "Ya" "Ya" `shouldBe` "YaYaYaYa"
+
+  describe "String1.extraEnd" $ do
+   it "repeats last two characters of 'Hello' three times" $
+     extraEnd "Hello" `shouldBe` "lololo"
+   it "repeats entire string 'ab' three times" $
+     extraEnd "ab" `shouldBe` "ababab"
+   it "repeats entire string 'Hi' three times" $
+     extraEnd "Hi" `shouldBe` "HiHiHi"
+   it "repeats last two characters of 'Candy' three times" $
+     extraEnd "Candy" `shouldBe` "dydydy"
+   it "repeats last two characters of 'Code' three times" $
+     extraEnd "Code" `shouldBe` "dedede"

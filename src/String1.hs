@@ -17,3 +17,6 @@ nonStart = (++) `on` drop 1
 
 makeAbba :: [a] -> [a] -> [a]
 makeAbba xs ys = concat [xs,ys,ys,xs]
+
+extraEnd :: [a] -> [a]
+extraEnd = concat . replicate 3 . (drop =<< subtract 2 . length) 
