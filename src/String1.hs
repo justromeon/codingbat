@@ -23,3 +23,6 @@ extraEnd = concat . replicate 3 . (drop =<< subtract 2 . length)
 
 withoutEnd :: [a] -> [a]
 withoutEnd = reverse . drop 1 . reverse . drop 1
+
+left2 :: [a] -> [a]
+left2 = (++) <$> drop 2 <*> take 2

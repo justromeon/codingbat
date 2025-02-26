@@ -88,3 +88,15 @@ spec = do
       withoutEnd "ab" `shouldBe` ""
     it "handles longer strings like 'woohoo' correctly" $
       withoutEnd "woohoo" `shouldBe` "ooho"
+
+  describe "String1.left2" $ do
+    it "rotates first two characters of medium-length word to the end" $
+      left2 "Hello" `shouldBe` "lloHe"
+    it "handles short word with exactly two characters" $
+      left2 "Hi" `shouldBe` "Hi"
+    it "works with typical four-letter programming word" $
+      left2 "code" `shouldBe` "deco"
+    it "handles numeric input correctly" $
+      left2 "12345" `shouldBe` "34512"
+    it "processes longer words preserving character order" $
+      left2 "Chocolate" `shouldBe` "ocolateCh"
