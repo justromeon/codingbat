@@ -19,4 +19,7 @@ makeAbba :: [a] -> [a] -> [a]
 makeAbba xs ys = concat [xs,ys,ys,xs]
 
 extraEnd :: [a] -> [a]
-extraEnd = concat . replicate 3 . (drop =<< subtract 2 . length) 
+extraEnd = concat . replicate 3 . (drop =<< subtract 2 . length)
+
+withoutEnd :: [a] -> [a]
+withoutEnd = reverse . drop 1 . reverse . drop 1

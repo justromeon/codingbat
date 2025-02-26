@@ -76,3 +76,15 @@ spec = do
      extraEnd "Candy" `shouldBe` "dydydy"
    it "repeats last two characters of 'Code' three times" $
      extraEnd "Code" `shouldBe` "dedede"
+
+  describe "String1.withoutEnd" $ do
+    it "returns the middle characters of 'Hello' (without first and last)" $
+      withoutEnd "Hello" `shouldBe` "ell"
+    it "returns the middle characters of 'coding' (without first and last)" $
+      withoutEnd "coding" `shouldBe` "odin"
+    it "returns the middle characters of 'Chocolate!' (without first and last)" $
+      withoutEnd "Chocolate!" `shouldBe` "hocolate"
+    it "returns empty string for a 2-character string 'ab'" $
+      withoutEnd "ab" `shouldBe` ""
+    it "handles longer strings like 'woohoo' correctly" $
+      withoutEnd "woohoo" `shouldBe` "ooho"
