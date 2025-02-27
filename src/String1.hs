@@ -26,3 +26,6 @@ withoutEnd = reverse . drop 1 . reverse . drop 1
 
 left2 :: [a] -> [a]
 left2 = (++) <$> drop 2 <*> take 2
+
+makeTags :: String -> String -> String
+makeTags tag word = '<':tag++">" ++ word ++ "</"++tag++">"

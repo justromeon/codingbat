@@ -100,3 +100,15 @@ spec = do
       left2 "12345" `shouldBe` "34512"
     it "processes longer words preserving character order" $
       left2 "Chocolate" `shouldBe` "ocolateCh"
+
+  describe "String1.makeTags" $ do
+    it "wraps 'Yay' in i tags" $
+      makeTags "i" "Yay" `shouldBe` "<i>Yay</i>"
+    it "wraps 'Hello' in i tags" $
+      makeTags "i" "Hello" `shouldBe` "<i>Hello</i>"
+    it "wraps 'Yay' in cite tags" $
+      makeTags "cite" "Yay" `shouldBe` "<cite>Yay</cite>"
+    it "handles longer tag names like 'address'" $
+      makeTags "address" "here" `shouldBe` "<address>here</address>"
+    it "handles empty content with i tag" $
+      makeTags "i" "" `shouldBe` "<i></i>"
