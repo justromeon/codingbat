@@ -112,3 +112,15 @@ spec = do
       makeTags "address" "here" `shouldBe` "<address>here</address>"
     it "handles empty content with i tag" $
       makeTags "i" "" `shouldBe` "<i></i>"
+
+  describe "String1.firstTwo" $ do
+    it "returns first two characters of 'Hello'" $
+      firstTwo "Hello" `shouldBe` "He"
+    it "returns first two characters of 'abcdefg'" $
+      firstTwo "abcdefg" `shouldBe` "ab"
+    it "returns entire string when input is exactly two characters" $
+      firstTwo "ab" `shouldBe` "ab"
+    it "returns entire string when input is one character" $
+      firstTwo "a" `shouldBe` "a"
+    it "returns empty string when input is empty" $
+      firstTwo "" `shouldBe` ""

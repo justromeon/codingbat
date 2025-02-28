@@ -29,3 +29,6 @@ left2 = (++) <$> drop 2 <*> take 2
 
 makeTags :: String -> String -> String
 makeTags tag word = '<':tag++">" ++ word ++ "</"++tag++">"
+
+firstTwo :: [a] -> [a]
+firstTwo = take 2
