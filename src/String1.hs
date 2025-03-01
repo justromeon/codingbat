@@ -32,3 +32,9 @@ makeTags tag word = '<':tag++">" ++ word ++ "</"++tag++">"
 
 firstTwo :: [a] -> [a]
 firstTwo = take 2
+
+comboString :: [a] -> [a] -> [a]
+comboString xs ys = case (compare `on` length) xs ys of
+  LT -> xs ++ ys ++ xs
+  EQ -> xs ++ ys ++ xs
+  GT -> ys ++ xs ++ ys

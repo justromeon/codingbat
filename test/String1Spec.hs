@@ -124,3 +124,15 @@ spec = do
       firstTwo "a" `shouldBe` "a"
     it "returns empty string when input is empty" $
       firstTwo "" `shouldBe` ""
+
+  describe "String1.comboString" $ do
+    it "wraps shorter string around longer one (hi, Hello)" $
+      comboString "hi" "Hello" `shouldBe` "hiHellohi"
+    it "wraps shorter string around longer one (b, aaa)" $
+      comboString "b" "aaa" `shouldBe` "baaab"
+    it "returns single string when one input is empty (aaa, empty)" $
+      comboString "aaa" "" `shouldBe` "aaa"
+    it "returns single string when one input is empty (empty, bb)" $
+      comboString "" "bb" `shouldBe` "bb"
+    it "wraps the longer string when the second string is shorter (bb, a)" $
+      comboString "bb" "a" `shouldBe` "abba"
