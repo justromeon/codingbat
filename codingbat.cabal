@@ -11,6 +11,7 @@ library
         Warmup1
         Warmup2
         String1
+        Logic1
     build-depends:
         base ^>=4.17.2.1,
         containers
@@ -24,6 +25,7 @@ test-suite codingbat-test
         Warmup1Spec
         Warmup2Spec
         String1Spec
+        Logic1Spec
     build-depends:
         base ^>=4.17.2.1,
         codingbat,
