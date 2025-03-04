@@ -23,3 +23,14 @@ spec = do
         cigarParty 60 True `shouldBe` True
       it "returns False for less than 30 cigars on a weekend" $
         cigarParty 29 True `shouldBe` False
+  
+  describe "Logic1.caughtSpeeding" $ do
+    it "handles normal day speed thresholds" $ do
+      caughtSpeeding 60 False `shouldBe` 0
+      caughtSpeeding 65 False `shouldBe` 1
+      caughtSpeeding 85 False `shouldBe` 2
+    
+    it "handles birthday speed thresholds" $ do
+      caughtSpeeding 65 True `shouldBe` 0
+      caughtSpeeding 85 True `shouldBe` 1
+      caughtSpeeding 90 True `shouldBe` 2
