@@ -7,7 +7,8 @@ cigarParty cigars isWeekend = cigars >= 30 && (isWeekend || cigars <= 40)
 
 caughtSpeeding :: Int -> Bool -> Int
 caughtSpeeding speed isBirthday
-    | isBirthday = maybe 2 snd (find ((>=speed) . (+5) . fst) limits)
-    | otherwise  = maybe 2 snd (find ((>=speed)        . fst) limits)
+    | speed <= 60 + adjustment = 0
+    | speed <= 80 + adjustment = 1
+    | otherwise = 2
   where
-    limits = [(60,0), (80,1)]
+    adjustment = if isBirthday then 5 else 0
