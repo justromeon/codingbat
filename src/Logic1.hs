@@ -1,7 +1,5 @@
 module Logic1 where
 
-import Data.List (find)
-
 cigarParty :: Int -> Bool -> Bool
 cigarParty cigars isWeekend = cigars >= 30 && (isWeekend || cigars <= 40)
 

@@ -1,4 +1,5 @@
 module String1 where
+
 import Data.Function (on)
 
 helloName :: String -> String
