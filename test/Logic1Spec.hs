@@ -34,3 +34,18 @@ spec = do
       caughtSpeeding 65 True `shouldBe` 0
       caughtSpeeding 85 True `shouldBe` 1
       caughtSpeeding 90 True `shouldBe` 2
+  
+  describe "love6" $ do
+    it "returns True when one number is exactly 6" $ do
+      love6 6 12 `shouldBe` True
+      love6 9 6 `shouldBe` True
+    it "returns True when numbers sum to 6" $ do
+      love6 1 5 `shouldBe` True
+      love6 3 3 `shouldBe` True
+    it "returns True when numbers differ by 6" $ do
+      love6 0 6 `shouldBe` True
+      love6 12 6 `shouldBe` True
+    it "returns False for other combinations" $ do
+      love6 4 7 `shouldBe` False
+      love6 2 9 `shouldBe` False
+      love6 5 8 `shouldBe` False

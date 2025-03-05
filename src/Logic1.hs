@@ -12,3 +12,6 @@ caughtSpeeding speed isBirthday
     | otherwise = 2
   where
     adjustment = if isBirthday then 5 else 0
+
+love6 :: Int -> Int -> Bool
+love6 x y = 6 `elem` [x, y, x+y, abs (x-y)]
