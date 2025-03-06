@@ -49,3 +49,15 @@ spec = do
       love6 4 7 `shouldBe` False
       love6 2 9 `shouldBe` False
       love6 5 8 `shouldBe` False
+  
+  describe "Logic1.dateFashion" $ do
+    it "returns 2 when one person is very stylish (8+) and other is not unstylish" $ do
+      dateFashion 5 10 `shouldBe` 2
+      dateFashion 9 9 `shouldBe` 2
+    it "returns 0 when either person is unstylish (2 or less)" $ do
+      dateFashion 5 2 `shouldBe` 0
+      dateFashion 10 2 `shouldBe` 0
+      dateFashion 2 9 `shouldBe` 0
+    it "returns 1 for average stylishness (3-7 for both)" $ do
+      dateFashion 5 5 `shouldBe` 1
+      dateFashion 3 7 `shouldBe` 1

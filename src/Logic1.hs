@@ -13,3 +13,9 @@ caughtSpeeding speed isBirthday
 
 love6 :: Int -> Int -> Bool
 love6 x y = 6 `elem` [x, y, x+y, abs (x-y)]
+
+dateFashion :: Int -> Int -> Int
+dateFashion you date
+    | any (<=2) [you,date] = 0
+    | any (>=8) [you,date] = 2
+    | otherwise            = 1
