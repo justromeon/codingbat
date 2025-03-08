@@ -19,3 +19,8 @@ dateFashion you date
     | any (<=2) [you,date] = 0
     | any (>=8) [you,date] = 2
     | otherwise            = 1
+
+sortaSum :: Int -> Int -> Int
+sortaSum x y
+    | x + y `elem` [10..19] = 20
+    | otherwise             = x + y

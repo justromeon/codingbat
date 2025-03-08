@@ -61,3 +61,18 @@ spec = do
     it "returns 1 for average stylishness (3-7 for both)" $ do
       dateFashion 5 5 `shouldBe` 1
       dateFashion 3 7 `shouldBe` 1
+
+  describe "Logic1.sortaSum" $ do
+    it "returns 20 when sum is between 10 and 19 inclusive" $ do
+      sortaSum 9 4 `shouldBe` 20
+      sortaSum 4 6 `shouldBe` 20
+      sortaSum 14 6 `shouldBe` 20
+    it "returns actual sum when sum is less than 10" $ do
+      sortaSum 3 4 `shouldBe` 7
+      sortaSum 4 5 `shouldBe` 9
+    it "returns actual sum when sum is greater than 19" $ do
+      sortaSum 10 11 `shouldBe` 21
+      sortaSum 14 7 `shouldBe` 21
+    it "handles negative numbers correctly" $ do
+      sortaSum 12 (-3) `shouldBe` 9
+      sortaSum (-3) 12 `shouldBe` 9
