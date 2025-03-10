@@ -76,3 +76,26 @@ spec = do
     it "handles negative numbers correctly" $ do
       sortaSum 12 (-3) `shouldBe` 9
       sortaSum (-3) 12 `shouldBe` 9
+
+  describe "Logic1.in1to10" $ do
+    context "when outsideMode is False" $ do
+      it "returns True when n is within [1, 10]" $ do
+        in1to10 5 False `shouldBe` True
+        in1to10 10 False `shouldBe` True
+        in1to10 1 False `shouldBe` True
+        in1to10 9 False `shouldBe` True
+      it "returns False when n is outside [1, 10]" $ do
+        in1to10 11 False `shouldBe` False
+        in1to10 0 False `shouldBe` False
+        in1to10 (-1) False `shouldBe` False
+        in1to10 99 False `shouldBe` False
+    context "when outsideMode is True" $ do
+      it "returns True when n is outside (1, 10)" $ do
+        in1to10 11 True `shouldBe` True
+        in1to10 0 True `shouldBe` True
+        in1to10 (-1) True `shouldBe` True
+        in1to10 1 True `shouldBe` True
+        in1to10 10 True `shouldBe` True
+        in1to10 (-99) True `shouldBe` True
+      it "returns False when n is within (1, 10)" $ do
+        in1to10 9 True `shouldBe` False

@@ -24,3 +24,8 @@ sortaSum :: Int -> Int -> Int
 sortaSum x y
     | x + y `elem` [10..19] = 20
     | otherwise             = x + y
+
+in1to10 :: Int -> Bool -> Bool
+in1to10 n outsideMode
+    | outsideMode = n <= 1 || n >= 10
+    | otherwise   = n >= 1 && n <=  10
