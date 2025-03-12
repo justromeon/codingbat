@@ -99,3 +99,24 @@ spec = do
         in1to10 (-99) True `shouldBe` True
       it "returns False when n is within (1, 10)" $ do
         in1to10 9 True `shouldBe` False
+  
+  describe "Logic1.squirrelPlay" $ do
+    context "when isSummer is False" $ do
+      it "should return True for temperatures within the range [60, 90]" $ do
+        squirrelPlay 70 False `shouldBe` True
+        squirrelPlay 90 False `shouldBe` True
+        squirrelPlay 60 False `shouldBe` True
+      it "should return False for temperatures outside the range [60, 90]" $ do
+        squirrelPlay 95 False `shouldBe` False
+        squirrelPlay 50 False `shouldBe` False
+        squirrelPlay 100 False `shouldBe` False
+        squirrelPlay 59 False `shouldBe` False
+    context "when isSummer is True" $ do
+      it "should return True for temperatures within the range [60, 100]" $ do
+        squirrelPlay 95 True `shouldBe` True
+        squirrelPlay 90 True `shouldBe` True
+        squirrelPlay 100 True `shouldBe` True
+      it "should return False for temperatures outside the range [60, 100]" $ do
+        squirrelPlay 50 True `shouldBe` False
+        squirrelPlay 105 True `shouldBe` False
+        squirrelPlay 59 True `shouldBe` False

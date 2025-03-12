@@ -29,3 +29,6 @@ in1to10 :: Int -> Bool -> Bool
 in1to10 n outsideMode
     | outsideMode = n <= 1 || n >= 10
     | otherwise   = n >= 1 && n <=  10
+
+squirrelPlay :: Int -> Bool -> Bool
+squirrelPlay temp isSummer = temp >= 60 && (if isSummer then temp <= 100 else temp <= 90)
