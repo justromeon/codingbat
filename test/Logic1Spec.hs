@@ -120,3 +120,22 @@ spec = do
         squirrelPlay 50 True `shouldBe` False
         squirrelPlay 105 True `shouldBe` False
         squirrelPlay 59 True `shouldBe` False
+  
+  describe "Logic1.alarmClock" $ do
+    context "when it's a weekday and not vacation" $ do
+      it "returns '7:00'" $ do
+        alarmClock 1 False `shouldBe` "7:00"
+        alarmClock 5 False `shouldBe` "7:00"
+    context "when it's a weekend and not vacation" $ do
+      it "returns '10:00'" $ do
+        alarmClock 0 False `shouldBe` "10:00"
+        alarmClock 6 False `shouldBe` "10:00"
+    context "when it's a weekend and vacation" $ do
+      it "returns 'off'" $ do
+        alarmClock 0 True `shouldBe` "off"
+        alarmClock 6 True `shouldBe` "off"
+    context "when it's a weekday and vacation" $ do
+      it "returns '10:00'" $ do
+        alarmClock 1 True `shouldBe` "10:00"
+        alarmClock 3 True `shouldBe` "10:00"
+        alarmClock 5 True `shouldBe` "10:00"

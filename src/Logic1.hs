@@ -32,3 +32,12 @@ in1to10 n outsideMode
 
 squirrelPlay :: Int -> Bool -> Bool
 squirrelPlay temp isSummer = temp >= 60 && (if isSummer then temp <= 100 else temp <= 90)
+
+alarmClock :: Int -> Bool -> String
+alarmClock day vacation
+    | vacation && weekend         = "off"
+    | vacation && not weekend     = "10:00"
+    | not vacation && weekend     = "10:00"
+    | not vacation && not weekend = "7:00"
+  where
+    weekend = day == 0 || day == 6
