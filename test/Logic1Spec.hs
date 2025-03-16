@@ -139,3 +139,25 @@ spec = do
         alarmClock 1 True `shouldBe` "10:00"
         alarmClock 3 True `shouldBe` "10:00"
         alarmClock 5 True `shouldBe` "10:00"
+  
+  describe "Logic1.nearTen" $ do
+    context "when the number is near a multiple of 10" $ do
+      it "returns True" $ do
+        nearTen 12 `shouldBe` True
+        nearTen 19 `shouldBe` True
+        nearTen 31 `shouldBe` True
+        nearTen 10 `shouldBe` True
+        nearTen 11 `shouldBe` True
+        nearTen 21 `shouldBe` True
+        nearTen 22 `shouldBe` True
+        nearTen 158 `shouldBe` True
+        nearTen 1 `shouldBe` True
+
+    context "when the number is not near a multiple of 10" $ do
+      it "returns False" $ do
+        nearTen 17 `shouldBe` False
+        nearTen 6 `shouldBe` False
+        nearTen 23 `shouldBe` False
+        nearTen 54 `shouldBe` False
+        nearTen 155 `shouldBe` False
+        nearTen 3 `shouldBe` False

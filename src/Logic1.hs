@@ -41,3 +41,6 @@ alarmClock day vacation
     | not vacation && not weekend = "7:00"
   where
     weekend = day == 0 || day == 6
+
+nearTen :: Int -> Bool
+nearTen = flip elem [0,1,2,8,9] . flip mod 10
