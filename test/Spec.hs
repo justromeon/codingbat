@@ -6,6 +6,7 @@ import qualified Warmup1Spec
 import qualified Warmup2Spec
 import qualified String1Spec
 import qualified Logic1Spec
+import qualified Logic2Spec
 
 main :: IO ()
 main = hspec $ do
@@ -13,3 +14,4 @@ main = hspec $ do
   Warmup2Spec.spec
   String1Spec.spec
   Logic1Spec.spec
+  Logic2Spec.spec
