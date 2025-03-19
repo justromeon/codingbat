@@ -19,7 +19,6 @@ spec = do
         makeBricks 1000000 1000 1000100 `shouldBe` True
         makeBricks 20 0 19 `shouldBe` True
         makeBricks 20 4 39 `shouldBe` True
-
     context "when it is not possible to make the goal length with the given bricks" $ do
       it "returns False" $ do
         makeBricks 3 1 9 `shouldBe` False
@@ -34,3 +33,21 @@ spec = do
         makeBricks 2 1000000 100003 `shouldBe` False
         makeBricks 20 0 21 `shouldBe` False
         makeBricks 20 4 51 `shouldBe` False
+
+  describe "Logic2.noTeenSum" $ do
+    context "when there are no teens to fix" $ do
+      it "returns the sum of the numbers" $ do
+        noTeenSum 1 2 3 `shouldBe` 6
+    context "when there are teens to fix" $ do
+      it "returns the sum of the numbers, with teens fixed" $ do
+        noTeenSum 2 13 1 `shouldBe` 3
+        noTeenSum 2 1 14 `shouldBe` 3
+        noTeenSum 2 1 15 `shouldBe` 18
+        noTeenSum 17 1 2 `shouldBe` 3
+        noTeenSum 16 17 18 `shouldBe` 16
+        noTeenSum 17 18 19 `shouldBe` 0
+        noTeenSum 15 16 1 `shouldBe` 32
+        noTeenSum 15 15 19 `shouldBe` 30
+        noTeenSum 5 17 18 `shouldBe` 5
+        noTeenSum 17 18 16 `shouldBe` 16
+        noTeenSum 17 19 18 `shouldBe` 0
