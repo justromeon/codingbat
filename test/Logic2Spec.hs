@@ -51,3 +51,27 @@ spec = do
         noTeenSum 5 17 18 `shouldBe` 5
         noTeenSum 17 18 16 `shouldBe` 16
         noTeenSum 17 19 18 `shouldBe` 0
+
+  describe "Logic2.makeChocolate" $ do
+    context "when goal can be reached using big chocolates" $ do
+      it "should return the correct number of small chocolates" $ do
+        makeChocolate 4 1 9 `shouldBe` 4
+        makeChocolate 6 2 7 `shouldBe` 2
+        makeChocolate 5 4 9 `shouldBe` 4
+        makeChocolate 1 2 6 `shouldBe` 1
+        makeChocolate 6 1 10 `shouldBe` 5
+        makeChocolate 6 2 12 `shouldBe` 2
+        makeChocolate 60 100 550 `shouldBe` 50
+    context "when goal cannot be reached" $ do
+      it "should return -1" $ do
+        makeChocolate 4 1 10 `shouldBe` -1
+        makeChocolate 1 2 7 `shouldBe` -1
+        makeChocolate 6 1 12 `shouldBe` -1
+        makeChocolate 7 1 13 `shouldBe` -1
+    context "when goal can be reached using only small chocolates" $ do
+      it "should return the goal" $ do
+        makeChocolate 4 1 4 `shouldBe` 4
+    context "when goal is a multiple of 5 and small chocolates are not needed" $ do
+      it "should return 0" $ do
+        makeChocolate 4 1 5 `shouldBe` 0
+        makeChocolate 1 2 5 `shouldBe` 0
