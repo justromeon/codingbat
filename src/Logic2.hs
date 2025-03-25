@@ -1,4 +1,5 @@
 module Logic2 where
+import qualified Data.Map as M
 
 makeBricks :: Int -> Int -> Int -> Bool
 makeBricks small big goal = big*5 + small >= goal && goal `mod` 5 <= small
@@ -13,3 +14,11 @@ makeChocolate small big goal
   where
     bigsFitted  = min big (goal `div` 5)
     smallNeeded = goal - bigsFitted*5
+
+loneSum :: Int -> Int -> Int -> Int
+loneSum a b c
+  | a == b && b == c = 0
+  | a == b = c
+  | a == c = b
+  | b == c = a
+  | otherwise = a + b + c

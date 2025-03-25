@@ -75,3 +75,20 @@ spec = do
       it "should return 0" $ do
         makeChocolate 4 1 5 `shouldBe` 0
         makeChocolate 1 2 5 `shouldBe` 0
+
+  describe "Logic2.loneSum" $ do
+    context "when all numbers are distinct" $ do
+      it "should return the sum of all numbers" $ do
+        loneSum 1 2 3 `shouldBe` 6
+        loneSum 4 2 3 `shouldBe` 9
+        loneSum 2 9 3 `shouldBe` 14
+    context "when two numbers are the same" $ do
+      it "should return the lone number" $ do
+        loneSum 3 2 3 `shouldBe` 2
+        loneSum 9 2 2 `shouldBe` 9
+        loneSum 2 2 9 `shouldBe` 9
+        loneSum 2 9 2 `shouldBe` 9
+        loneSum 1 3 1 `shouldBe` 3
+    context "when all numbers are the same" $ do
+      it "should return 0" $ do
+        loneSum 3 3 3 `shouldBe` 0
