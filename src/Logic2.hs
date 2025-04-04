@@ -22,3 +22,10 @@ loneSum a b c
   | a == c = b
   | b == c = a
   | otherwise = a + b + c
+
+roundSum :: Int -> Int -> Int -> Int
+roundSum a b c = sum (map roundByOnes [a,b,c])
+  where
+    roundByOnes n
+      | n `mod` 10 >= 5 = ((n `div` 10) + 1) * 10
+      | otherwise       =  (n `div` 10)      * 10

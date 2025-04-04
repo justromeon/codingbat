@@ -92,3 +92,28 @@ spec = do
     context "when all numbers are the same" $ do
       it "should return 0" $ do
         loneSum 3 3 3 `shouldBe` 0
+
+  describe "Logic2.roundSum" $ do
+    context "when all numbers are closer to the lower multiple of 10" $ do
+      it "should round down correctly" $ do
+        roundSum 12 13 14 `shouldBe` 30
+        roundSum 4 4 4 `shouldBe` 0
+    context "when some numbers are closer to the higher multiple of 10" $ do
+      it "should round appropriately" $ do
+        roundSum 16 17 18 `shouldBe` 60
+        roundSum 9 4 4 `shouldBe` 10
+        roundSum 0 9 0 `shouldBe` 10
+        roundSum 10 10 19 `shouldBe` 40
+        roundSum 23 11 26 `shouldBe` 60
+        roundSum 23 24 29 `shouldBe` 70
+        roundSum 11 24 36 `shouldBe` 70
+        roundSum 14 12 26 `shouldBe` 50
+    context "when numbers are exactly in the middle" $ do
+      it "should round up" $ do
+        roundSum 25 24 25 `shouldBe` 80
+    context "with larger numbers" $ do
+      it "should handle larger inputs correctly" $ do
+        roundSum 20 30 40 `shouldBe` 90
+        roundSum 45 21 30 `shouldBe` 100
+        roundSum 24 36 32 `shouldBe` 90
+        roundSum 12 10 24 `shouldBe` 40
