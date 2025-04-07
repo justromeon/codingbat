@@ -29,3 +29,6 @@ roundSum a b c = sum (map roundByOnes [a,b,c])
     roundByOnes n
       | n `mod` 10 >= 5 = ((n `div` 10) + 1) * 10
       | otherwise       =  (n `div` 10)      * 10
+
+luckySum :: Int -> Int -> Int -> Int
+luckySum a b c = sum $ takeWhile (/=13) [a,b,c]

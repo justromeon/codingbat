@@ -117,3 +117,25 @@ spec = do
         roundSum 45 21 30 `shouldBe` 100
         roundSum 24 36 32 `shouldBe` 90
         roundSum 12 10 24 `shouldBe` 40
+  
+  describe "Logic2.luckySum" $ do
+    context "when no argument is 13" $ do
+      it "should return the sum of all arguments" $ do
+        luckySum 1 2 3 `shouldBe` 6
+        luckySum 6 5 2 `shouldBe` 13
+        luckySum 7 2 1 `shouldBe` 10
+    context "when the last argument (c) is 13" $ do
+      it "should ignore the last argument and sum the first two" $ do
+        luckySum 1 2 13 `shouldBe` 3
+        luckySum 9 4 13 `shouldBe` 13
+        luckySum 3 3 13 `shouldBe` 6
+    context "when the middle argument (b) is 13" $ do
+      it "should ignore the middle and last arguments, returning the first" $ do
+        luckySum 1 13 3 `shouldBe` 1
+        luckySum 1 13 13 `shouldBe` 1
+        luckySum 8 13 2 `shouldBe` 8
+    context "when the first argument (a) is 13" $ do
+      it "should ignore all arguments and return 0" $ do
+        luckySum 13 2 3 `shouldBe` 0
+        luckySum 13 2 13 `shouldBe` 0
+        luckySum 13 13 2 `shouldBe` 0
