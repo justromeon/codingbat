@@ -13,6 +13,7 @@ library
         String1
         Logic1
         Logic2
+        String2
     build-depends:
         base ^>=4.17.2.1,
         containers
@@ -28,6 +29,7 @@ test-suite codingbat-test
         String1Spec
         Logic1Spec
         Logic2Spec
+        String2Spec
     build-depends:
         base ^>=4.17.2.1,
         codingbat,
