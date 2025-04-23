@@ -32,3 +32,9 @@ roundSum a b c = sum (map roundByOnes [a,b,c])
 
 luckySum :: Int -> Int -> Int -> Int
 luckySum a b c = sum $ takeWhile (/=13) [a,b,c]
+
+closeFar :: Int -> Int -> Int -> Bool
+closeFar a b c
+    | abs (a - b) <= 1 = abs (a - c) >= 2 && abs (b - c) >= 2
+    | abs (a - c) <= 1 = abs (a - b) >= 2 && abs (b - c) >= 2
+    | otherwise        = False
