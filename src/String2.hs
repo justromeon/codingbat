@@ -18,3 +18,14 @@ countHi = length . filter (== ('h','i')) . bigrams
 
 endOther :: String -> String -> Bool
 endOther = (\s1 s2 -> s1 `isSuffixOf` s2 || s2 `isSuffixOf` s1) `on` map toLower
+
+catDog :: String -> Bool
+catDog = (==) <$> countCat <*> countDog
+  where
+    countCat ('c':'a':'t':rest) = 1 + countCat rest
+    countCat []     = 0
+    countCat (_:xs) = countCat xs
+
+    countDog ('d':'o':'g':rest) = 1 + countDog rest
+    countDog []     = 0
+    countDog (_:xs) = countDog xs
