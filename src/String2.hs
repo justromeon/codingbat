@@ -1,7 +1,7 @@
 module String2 where
 import Data.Char (toLower)
 import Data.Function (on)
-import Data.List (isSuffixOf)
+import Data.List (isSuffixOf, isInfixOf)
 
 doubleChar :: String -> String
 doubleChar = (<* [1..2])
@@ -29,3 +29,8 @@ catDog = (==) <$> countCat <*> countDog
     countDog ('d':'o':'g':rest) = 1 + countDog rest
     countDog []     = 0
     countDog (_:xs) = countDog xs
+
+xyzThere :: String -> Bool
+xyzThere = ("xyz" `isInfixOf`) . rmIvalidX
+  where
+    rmIvalidX str = [c | (prev, c) <- zip (' ':str) str, c /= 'x' || prev /= '.']
