@@ -10,3 +10,6 @@ commonEnd (x:xs) (y:ys) = x == y || last xs == last ys
 
 reverse3 :: [a] -> [a]
 reverse3 = reverse
+
+middleWay :: [a] -> [a] -> [a]
+middleWay [_,x,_] [_,y,_] = [x,y]
