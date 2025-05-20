@@ -13,3 +13,6 @@ reverse3 = reverse
 
 middleWay :: [a] -> [a] -> [a]
 middleWay [_,x,_] [_,y,_] = [x,y]
+
+sameFirstLast :: Eq a => [a] -> Bool
+sameFirstLast = (==) <$> head <*> last
