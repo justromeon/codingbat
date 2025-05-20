@@ -16,3 +16,6 @@ middleWay [_,x,_] [_,y,_] = [x,y]
 
 sameFirstLast :: Eq a => [a] -> Bool
 sameFirstLast = (==) <$> head <*> last
+
+sum3 :: [Int] -> Int
+sum3 = sum
