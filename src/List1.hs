@@ -19,3 +19,6 @@ sameFirstLast = (==) <$> head <*> last
 
 sum3 :: [Int] -> Int
 sum3 = sum
+
+maxEnd3 :: [Int] -> [Int]
+maxEnd3 = replicate 3 . (max <$> head <*> last)
