@@ -25,3 +25,6 @@ maxEnd3 = replicate 3 . (max <$> head <*> last)
 
 makeEnds :: [Int] -> [Int]
 makeEnds = (:) <$> head <*> (pure . last)
+
+makePi :: [Int]
+makePi = [3,1,4]
