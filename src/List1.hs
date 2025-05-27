@@ -28,3 +28,6 @@ makeEnds = (:) <$> head <*> (pure . last)
 
 makePi :: [Int]
 makePi = [3,1,4]
+
+rotateLeft3 :: [Int] -> [Int]
+rotateLeft3 = uncurry (flip (++)) . splitAt 1
