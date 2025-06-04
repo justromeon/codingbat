@@ -34,3 +34,6 @@ rotateLeft3 = uncurry (flip (++)) . splitAt 1
 
 sum2 :: [Int] -> Int
 sum2 = sum . take 2
+
+has23 :: [Int] -> Bool
+has23 = any (`elem` [2,3])
