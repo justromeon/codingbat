@@ -1,4 +1,5 @@
 module List2 where
+import Data.List (sort)
 
 countEvens :: [Int] -> Int
 countEvens = length . filter even
@@ -16,3 +17,8 @@ sum67 :: [Int] -> Int
 sum67 [] = 0
 sum67 (6:xs) = sum67 . drop 1 . dropWhile (/=7) $ xs
 sum67 (x:xs) = x + sum67 xs
+
+centeredAverage :: [Int] -> Int
+centeredAverage = average . drop 1 . reverse . drop 1 . sort
+  where
+    average = div <$> sum <*> length
