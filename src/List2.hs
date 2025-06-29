@@ -22,3 +22,8 @@ centeredAverage :: [Int] -> Int
 centeredAverage = average . drop 1 . reverse . drop 1 . sort
   where
     average = div <$> sum <*> length
+
+has22 :: [Int] -> Bool
+has22 = elem (2,2) .  bigrams
+  where
+    bigrams = zip <*> tail
